@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install: 
+  - docker build -t elshafeei/docker-react -f Dockerfile.dev .
+script: 
+  - docker run elshafeei/docker-react npm run test -- --coverage
